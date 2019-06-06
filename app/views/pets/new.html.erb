@@ -1,0 +1,10 @@
+<h2>Create Pet:</h2>
+
+<%= form_for @pet do |f| %>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %><br/>
+  <%= f.label :description %><br/>
+  <%= f.text_field :description %><br/>
+  <%= collection_select(:pet, :owner_id, Owner.all, :id, :name, prompt: true )%>
+  <%= f.submit %>
+<% end %>

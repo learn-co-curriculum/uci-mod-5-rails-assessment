@@ -1,0 +1,16 @@
+<h2>
+  <%= @owner.name %>
+</h2>
+<b>Address: </b> <%= @owner.address %>
+<br>
+<% if @owner.pets %>
+  <h4>Pets</h4>
+  <ul>
+    <% @owner.pets.each do |pet| %>
+      <li>
+        <%= link_to pet.name, pet %>
+      </li>
+      <br>
+    <% end %>
+  </ul>
+<% end %>

@@ -1,0 +1,8 @@
+<h2>
+  <%= @pet.name %>
+</h2>
+<b>Description: </b> <%= @pet.description %>
+<br>
+<% if @pet.owner %>
+  <b>Owner: </b><%= link_to @pet.owner.name, @pet.owner %>
+<% end %>

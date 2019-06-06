@@ -1,1 +1,21 @@
 <h2>All Pets</h2>
+
+<%= form_tag("/pets", method: "get") do %>
+  <b><%= label_tag(:search, "Search By Owner:") %></b>
+  <br>
+  <%= text_field_tag(:search) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<%if @message %>
+  <%= @message %>
+<%else %>
+  <ul>
+    <% @pets.each do |pet| %>
+      <li>
+        <%= link_to pet.name, pet %>
+      </li>
+      <br>
+    <% end %>
+  </ul>
+<% end %>
